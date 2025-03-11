@@ -3,14 +3,14 @@
 ## Project Overview
 This project is a machine learning model that predicts the **Yearly Amount Spent** by e-commerce customers based on their online behavior. By analyzing features such as **Time on App**, **Time on Website**, and **Length of Membership**, we build a linear regression model to gain insights into customer spending habits.
 
-
+---
 
 ## Project Objectives
 - **Predict** yearly customer spending using a linear regression model.
 - **Visualize** the relationship between different features and spending.
 - **Evaluate** the model's performance using error metrics.
 
-
+---
 
 ## Dataset
 The dataset used in this project (`Ecommerce Customers.csv`) contains the following features:
@@ -22,7 +22,7 @@ The dataset used in this project (`Ecommerce Customers.csv`) contains the follow
 - **Length of Membership**: Duration of the customer's membership in years.
 - **Yearly Amount Spent**: The target variable representing the yearly spending in USD.
 
-
+---
 
 ## Project Steps
 1. **Data Loading and Visualization**:
@@ -41,8 +41,31 @@ The dataset used in this project (`Ecommerce Customers.csv`) contains the follow
    - Predicting `Yearly Amount Spent` using the test set.
    - Comparing predicted values with actual values.
 
-5. Model Evaluation :
-   - Calculating Mean Absolute Error (MAE) , Mean Squared Error (MSE) , and  Root Mean Squared Error (RMSE) to measure model performance.
+5. **Model Evaluation**:
+   - Calculating **Mean Absolute Error (MAE)**, **Mean Squared Error (MSE)**, and **Root Mean Squared Error (RMSE)** to measure model performance.
    - Plotting actual vs. predicted values to visualize the model's accuracy.
 
+---
+
+## Code Example
+```python
+# Training the Linear Regression Model
+from sklearn.linear_model import LinearRegression
+
+lm = LinearRegression()
+lm.fit(x_train, y_train)
+
+# Predicting and Evaluating
+predictions = lm.predict(x_test)
+
+# Error Metrics
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+mae = mean_absolute_error(y_test, predictions)
+mse = mean_squared_error(y_test, predictions)
+rmse = mse ** 0.5
+
+print('MAE:', mae)
+print('MSE:', mse)
+print('RMSE:', rmse)
 
