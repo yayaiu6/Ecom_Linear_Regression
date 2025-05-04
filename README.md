@@ -68,4 +68,7 @@ rmse = mse ** 0.5
 print('MAE:', mae)
 print('MSE:', mse)
 print('RMSE:', rmse)
+```
+## License
 
+This project is licensed under the [MIT License](./LICENSE).
